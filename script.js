@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // 1. Go to https://web3forms.com/#create-access-key
             // 2. Enter kksahoo@blfindia.com and click Create Access Key
             // 3. Check your email, copy the string it gives you, and paste it inside the quotes below:
-            const ACCESS_KEY = "8a239cb1-82ea-45ab-b5ca-a4c321bfa17a";
+            const ACCESS_KEY = "33989e82-bafa-475f-ad35-90acab52c048";
 
             if (ACCESS_KEY === "YOUR_ACCESS_KEY_HERE" || ACCESS_KEY === "") {
                 alert("Please add your Web3Forms Access Key to script.js to send emails directly.");
@@ -163,12 +163,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.style.backgroundColor = '#27ae60';
                     btn.style.color = '#fff';
                     quoteForm.reset();
-                    
+
                     // Show custom popup
                     const popup = document.getElementById('successPopup');
                     if (popup) {
                         popup.classList.add('show');
-                        
+
                         // Auto hide after 6 seconds
                         setTimeout(() => {
                             popup.classList.remove('show');
