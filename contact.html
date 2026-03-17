@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Biharilal Fashions</title>
+    <meta name="description" content="Get in touch with Biharilal Fashions for premium B2B garment manufacturing, catalog requests, bulk pricing, or custom production inquiries.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar" style="background-color: rgba(255, 255, 255, 0.98); box-shadow: 0 4px 20px rgba(0,0,0,0.05); border-bottom: none;">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text" style="color: var(--primary-dark);">Biharilal <span class="accent-text">Fashions</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#home" class="nav-link" style="color: var(--primary-dark);">Home</a>
+                <div class="dropdown">
+                    <a href="about.html" class="nav-link" style="color: var(--primary-dark);">About Us <i class="fas fa-chevron-down" style="font-size: 0.7em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="about.html" class="dropdown-item">Company Overview</a>
+                        <a href="certifications.html" class="dropdown-item">Certifications</a>
+                        <a href="sustainability.html" class="dropdown-item">Sustainability</a>
+                    </div>
+                </div>
+                <a href="index.html#infrastructure" class="nav-link" style="color: var(--primary-dark);">Infrastructure</a>
+                <a href="products.html" class="nav-link" style="color: var(--primary-dark);">Products</a>
+                <a href="fabrics.html" class="nav-link" style="color: var(--primary-dark);">Fabrics</a>
+                <div class="dropdown">
+                    <a href="contact.html" class="nav-link active" style="color: var(--accent-earth);">Contact Us <i class="fas fa-chevron-down" style="font-size: 0.7em; margin-left: 4px;"></i></a>
+                    <div class="dropdown-menu" style="right: 0; left: auto; min-width: 150px;">
+                        <a href="contact.html" class="dropdown-item" style="color: var(--accent-earth);">Get in Touch</a>
+                        <a href="join.html" class="dropdown-item">Join Us</a>
+                    </div>
+                </div>
+            </div>
+            <a href="contact.html" class="btn btn-primary nav-btn">Request a Quote</a>
+            <button class="mobile-toggle" aria-label="Toggle menu" style="color: var(--primary-dark);">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header" style="padding-top: 140px; padding-bottom: 80px; background-color: var(--primary-light); text-align: center;">
+        <div class="container fade-in-up">
+            <span class="section-subtitle">Partner With Us</span>
+            <h1 class="section-title">Get in Touch</h1>
+            <p class="max-w-3xl mx-auto text-light-muted" style="color: var(--text-light) !important;">Contact our B2B wholesale team for catalog requests, bulk pricing, or custom production inquiries.</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container fade-in-up">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2 class="section-title mb-8" style="font-size: 2rem;">Ready to source <br>quality apparel?</h2>
+                    
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <div class="detail-icon"><i class="fas fa-map-marker-alt" style="color: var(--accent-earth);"></i></div>
+                            <div>
+                                <h4>Corporate Office</h4>
+                                <p>62/63 White Hall, 143, A. K. Marg,<br>Kemps Corner, Mumbai - 400036, India</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-icon"><i class="fas fa-building" style="color: var(--accent-earth);"></i></div>
+                            <div>
+                                <h4>Factory Address</h4>
+                                <p>B-3, 1st Floor, Asmeeta Textile Park,<br>Kongaon, Bhiwandi, Maharashtra 421311</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-icon"><i class="fas fa-envelope" style="color: var(--accent-earth);"></i></div>
+                            <div>
+                                <h4>Email Enquiries</h4>
+                                <p>kksahoo@blfindia.com</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-icon"><i class="fas fa-phone-alt" style="color: var(--accent-earth);"></i></div>
+                            <div>
+                                <h4>Direct Line</h4>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form id="quoteForm" class="contact-form">
+                        <h3 class="form-title">Request a Quote</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company/Brand Name</label>
+                                <input type="text" id="company" placeholder="Acme Apparel" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Business Email</label>
+                                <input type="email" id="email" placeholder="john@company.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" placeholder="+91 98765 43210" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">Area of Interest</label>
+                            <select id="interest" required>
+                                <option value="" disabled selected>Select category</option>
+                                <option value="menswear">Menswear</option>
+                                <option value="womenswear">Womenswear</option>
+                                <option value="kidswear">Kidswear</option>
+                                <option value="custom">Custom Development</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Requirements & Volume</label>
+                            <textarea id="message" rows="4" placeholder="Briefly describe your production needs..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Submit Inquiry <i class="fas fa-paper-plane ml-2"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="map-container fade-in-up" style="margin-top: 5rem;">
+                <div class="text-center section-header mb-8">
+                    <span class="section-subtitle">Visit Us</span>
+                    <h2 class="section-title" style="font-size: 2rem;">Our Locations</h2>
+                    <div class="divider center-divider"></div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="map-box">
+                        <h3 style="margin-bottom: 1rem; color: var(--primary-dark); font-family: var(--font-heading);">Corporate Office</h3>
+                        <p style="margin-bottom: 1rem; font-size: 0.9rem; color: var(--text-light);">62/63 White Hall, 143, A. K. Marg, Kemps Corner, Mumbai - 400036</p>
+                        <iframe 
+                            src="https://maps.google.com/maps?q=62%2F63%20White%20Hall%2C%20143%2C%20A.%20K.%20Marg%2C%20Kemps%20Corner%2C%20Mumbai%20-%20400036%2C%20India&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="350" 
+                            style="border:0; border-radius: var(--border-radius); box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: block;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Biharilal Fashions Corporate Office">
+                        </iframe>
+                    </div>
+                    <div class="map-box">
+                        <h3 style="margin-bottom: 1rem; color: var(--primary-dark); font-family: var(--font-heading);">Primary Factory</h3>
+                        <p style="margin-bottom: 1rem; font-size: 0.9rem; color: var(--text-light);">B-3, 1st Floor, Asmeeta Textile Park, Kongaon, Bhiwandi, Maharashtra 421311</p>
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Asmeeta%20Textile%20Park%2C%20Bhiwandi%2C%20Maharashtra%2C%20India&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="350" 
+                            style="border:0; border-radius: var(--border-radius); box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: block;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Biharilal Fashions Primary Factory">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Notification Popup -->
+    <div id="successPopup" class="notification-popup">
+        <div class="popup-content">
+            <div class="popup-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="popup-text">
+                <h4 style="margin-bottom: 0.25rem; color: var(--primary-dark);">Success!</h4>
+                <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">Your inquiry has been sent directly to our team. We'll be in touch shortly.</p>
+            </div>
+            <button class="popup-close" id="closePopup" aria-label="Close notification">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo text-light">Biharilal <span class="accent-text">Fashions</span></a>
+                <p class="footer-desc">Your trusted global partner in premium garment manufacturing and exporting.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html#home">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="products.html">Products</a>
+                <a href="sustainability.html">Sustainability</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-cert">
+                <h4>Certifications</h4>
+                <div class="cert-icons">
+                    <span class="cert-badge">ISO 9001</span>
+                    <span class="cert-badge">Wrap Certified</span>
+                    <span class="cert-badge">Oeko-Tex</span>
+                </div>
+                <a href="certifications.html" style="display: inline-block; margin-top: 1rem; color: var(--accent-earth); font-size: 0.85rem; text-decoration: none; border-bottom: 1px solid var(--accent-earth); transition: var(--transition);">View All Details &rarr;</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container bottom-flex">
+                <p>&copy; <span id="year">2026</span> Biharilal Fashions. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
