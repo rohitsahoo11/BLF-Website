@@ -19,38 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navLinksContainer = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const allLinks = document.querySelectorAll('.nav-link, .dropdown-item');
 
-    /* Simple mobile menu implementation */
+    /* Mobile menu implementation via CSS classes */
     mobileToggle.addEventListener('click', () => {
-        const isDisplayed = navLinksContainer.style.display === 'flex';
-
-        if (isDisplayed) {
-            navLinksContainer.style.display = 'none';
-        } else {
-            navLinksContainer.style.display = 'flex';
-            navLinksContainer.style.flexDirection = 'column';
-            navLinksContainer.style.position = 'absolute';
-            navLinksContainer.style.top = '100%';
-            navLinksContainer.style.left = '0';
-            navLinksContainer.style.width = '100%';
-            navLinksContainer.style.backgroundColor = '#FFFFFF';
-            navLinksContainer.style.padding = '1rem 0';
-            navLinksContainer.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-
-            navLinks.forEach(link => {
-                link.style.padding = '1rem 2rem';
-                link.style.color = '#0B1D3A';
-                link.style.borderBottom = '1px solid #F4F6F9';
-            });
-        }
+        navLinksContainer.classList.toggle('nav-active');
     });
 
     // Close mobile menu when clicking a link
-    navLinks.forEach(link => {
+    allLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (window.innerWidth <= 768) {
-                navLinksContainer.style.display = 'none';
+                navLinksContainer.classList.remove('nav-active');
             }
         });
     });
@@ -109,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // 1. Go to https://web3forms.com/#create-access-key
             // 2. Enter kksahoo@blfindia.com and click Create Access Key
             // 3. Check your email, copy the string it gives you, and paste it inside the quotes below:
-            const ACCESS_KEY = "33989e82-bafa-475f-ad35-90acab52c048";
+            const ACCESS_KEY = "8a239cb1-82ea-45ab-b5ca-a4c321bfa17a";
 
             if (ACCESS_KEY === "YOUR_ACCESS_KEY_HERE" || ACCESS_KEY === "") {
                 alert("Please add your Web3Forms Access Key to script.js to send emails directly.");
@@ -178,6 +158,90 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     console.log(response);
                     btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Sending Failed';
+                    btn.style.backgroundColor = '#e74c3c';
+                    btn.style.color = '#fff';
+                }
+            } catch (error) {
+                console.log(error);
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Network Error';
+                btn.style.backgroundColor = '#e74c3c';
+                btn.style.color = '#fff';
+            }
+
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                btn.style.backgroundColor = '';
+                btn.style.color = '';
+            }, 4000);
+        });
+    }
+
+    // Career Form submission via Web3Forms (Supports File Upload)
+    const careerForm = document.getElementById('careerForm');
+    if (careerForm) {
+        careerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const btn = careerForm.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting Application...';
+            btn.disabled = true;
+
+            const ACCESS_KEY = "8a239cb1-82ea-45ab-b5ca-a4c321bfa17a";
+
+            // Use FormData for file uploads
+            const formData = new FormData();
+            formData.append('access_key', ACCESS_KEY);
+
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const fullName = `${firstName} ${lastName}`;
+
+            formData.append('subject', 'New Job Application: ' + fullName);
+            formData.append('from_name', 'Biharilal Fashions Careers');
+            formData.append('name', fullName);
+            formData.append('email', document.getElementById('email').value);
+            formData.append('phone', document.getElementById('phone').value);
+
+            const deptElement = document.getElementById('department');
+            formData.append('department', deptElement.options[deptElement.selectedIndex].text);
+            formData.append('coverLetter', document.getElementById('coverLetter').value);
+
+            // Append File
+            const resumeFile = document.getElementById('resume').files[0];
+            if (resumeFile) {
+                formData.append('resume', resumeFile);
+            }
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const json = await response.json();
+
+                if (response.status === 200) {
+                    btn.innerHTML = '<i class="fas fa-check"></i> Application Sent Successfully';
+                    btn.style.backgroundColor = '#27ae60';
+                    btn.style.color = '#fff';
+                    careerForm.reset();
+
+                    // Show custom popup
+                    const popup = document.getElementById('successPopup');
+                    if (popup) {
+                        popup.classList.add('show');
+
+                        // Auto hide after 6 seconds
+                        setTimeout(() => {
+                            popup.classList.remove('show');
+                        }, 6000);
+                    }
+                } else {
+                    console.log(response);
+                    btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Submission Failed';
                     btn.style.backgroundColor = '#e74c3c';
                     btn.style.color = '#fff';
                 }
