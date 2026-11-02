@@ -23,20 +23,6 @@
       </feMerge>
     </filter>
 
-    <!-- India Glow Filter -->
-    <filter id="indiaGlow" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
-      <feColorMatrix type="matrix" values="
-        1 0 0 0 0.70
-        0 1 0 0 0.60
-        0 0 1 0 0.48
-        0 0 0 1 0" result="gold"/>
-      <feMerge>
-        <feMergeNode in="gold"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
     <style>
       .route-path {
         stroke-dasharray: 6, 4;
@@ -46,6 +32,15 @@
         to {
           stroke-dashoffset: -1000;
         }
+      }
+      .pulse-ring {
+        transform-origin: 573px 473px;
+        animation: pulse 3s ease-out infinite;
+      }
+      @keyframes pulse {
+        0% { r: 7px; opacity: 0.8; }
+        50% { r: 24px; opacity: 0.2; }
+        100% { r: 32px; opacity: 0; }
       }
     </style>
   </defs>
@@ -259,9 +254,9 @@
     <path id="us" d="M143.589,375.989l-0.865,3.475l-3.017-1.954h-1.504l-0.865,3.691l-10.554,23.65l2.801,20.606l3.449,1.737l0.648,5.645h7.105l6.889,5.204l13.562,1.305l1.504,6.941l2.152,1.521l3.017-3.033l2.369,1.08l2.152,9.976l3.656,2.386l3.017-5.645l9.258-6.726l6.025,2.817l5.169,0.433l0.216-3.25l10.762,0.217l2.152,2.386l0.432,5.42l-1.288,3.034l1.504,5.203h3.233l3.232-4.987l-1.288-2.386l-1.288-5.204l1.936-5.86l8.826-7.59l6.673-1.953l-0.864-6.293l9.258-9.983l9.258-1.521l-1.504-5.193l9.042-5.205v-6.94l-0.865-0.433l-3.233,1.082l-0.432,4.252l-10.745,0.129l-8.419,5.594l-13.217,4.322l-2.109-2.586l5.999-9.076l-2.965-2.826l-2.014-3.838l-4.175-3.354l-4.538-0.38l-8.575-5.852L143.589,375.989L143.589,375.989z M74.791,285.234l2.991,5.594l1.919-0.432v-1.938L74.791,285.234L74.791,285.234z M57.926,334.428l-0.147,2.602l1.867-0.432v-1.158L57.926,334.428L57.926,334.428z M55.057,335.586l-3.734,1.885l0.579,2.022l1.435-1.158l2.87-1.306L55.057,335.586L55.057,335.586z M39.541,338.042l-2.584-0.579l-0.432,1.158l0.285,2.169L39.541,338.042L39.541,338.042z M34.078,337.902l-2.446-1.01l-0.865,1.59l1.582,1.591L34.078,337.902L34.078,337.902z M95.485,277.922l-7.252,1.721l1.496,8.168l7.892,2.151l0.423,1.72l-11.73,3.657l-6.613,10.96l2.343,11.609l3.838,2.576l2.991-2.793l0.856,1.721l-3.63,4.296l-14.082,6.449l-8.964,2.151l-0.216,3.225l20.694-6.016l8.532-2.369l7.892-9.674l8.748-5.8l-4.478,7.521l4.91,0.647l8.324-3.656l1.496,6.017l5.757,1.288l5.973,5.8l0.423,4.296l-0.855,1.072l1.063,4.08h1.496l0.216-6.881h1.703l0.423,16.977l4.271-3.657l-2.991-17.625h-4.478l-4.91-6.231l24.108-40.844l-23.892-18.696l-26.667,5.161l-1.063,8.168l5.757,3.439l-2.135,5.594L95.485,277.922L95.485,277.922z"/>
   </g>
 
-  <!-- 3. India (Official Territory including Jammu, Kashmir & Ladakh) -->
-  <g fill="rgba(166, 144, 116, 0.65)" stroke="#EADBC8" stroke-width="1.4" filter="url(#indiaGlow)">
-    <path id="in" d="M595,509.688l3.958-1.938l2.352-8.505l-0.104-10.441l13.468-14.54v-3.447l2.774-1.081l-0.104-3.984l-2.991-5.817l1.712-3.121l3.742,3.449l4.808,0.216v1.938l-1.495,1.616l0.318,0.863l2.567,0.104l0.536,2.904h0.752l1.928-3.449l0.958-9.042l3.207-2.265l0.104-3.12l-1.279-2.481l-2.031-0.104l-7.951,5.256l0.5,3.38l-5.584-0.019l-1.97-2.41l-1.072,0.138l0.363,3.354l-12.075-0.863l-7.485-3.337l-0.397-4.106l-4.988-3.094l-0.06-6.371L593.2,433.8L597.5,427.5L595.8,421.8L589.5,418.2L581.8,416.0L575.2,417.8L570.5,422.5L568.0,428.2L571.2,433.0L578.17,436.21l0.855,3.424l3.854,3.12l-6.665,13.641l-4.46,0.337l-0.734,1.644l4.392,4.062l-0.216,4.105l-4.486-0.069l-0.484,2.04l3.727-0.164l0.104,1.616l-2.671,1.4l1.711,3.232l3.312,1.08l2.031-1.504l0.959-2.688l1.177-0.535l1.392,1.398l-0.424,3.449l-0.96,1.617l0.217,2.8L595,509.688L595,509.688z"/>
+  <!-- 3. India (Central Garment Manufacturing Hub) -->
+  <g fill="rgba(166, 144, 116, 0.55)" stroke="#DFC4A3" stroke-width="1.3">
+    <path id="in" d="M595,509.688l3.958-1.938l2.352-8.505l-0.104-10.441l13.468-14.54v-3.447l2.774-1.081l-0.104-3.984l-2.991-5.817l1.712-3.121l3.742,3.449l4.808,0.216v1.938l-1.495,1.616l0.318,0.863l2.567,0.104l0.536,2.904h0.752l1.928-3.449l0.958-9.042l3.207-2.265l0.104-3.12l-1.279-2.481l-2.031-0.104l-7.951,5.256l0.5,3.38l-5.584-0.019l-1.97-2.41l-1.072,0.138l0.363,3.354l-12.075-0.863l-7.485-3.337l-0.397-4.106l-4.988-3.094l-0.06-6.371l-3.423-3.916l-7.867,0.752l0.855,3.424l3.854,3.12l-6.665,13.641l-4.46,0.337l-0.734,1.644l4.392,4.062l-0.216,4.105l-4.486-0.069l-0.484,2.04l3.727-0.164l0.104,1.616l-2.671,1.4l1.711,3.232l3.312,1.08l2.031-1.504l0.959-2.688l1.177-0.535l1.392,1.398l-0.424,3.449l-0.96,1.617l0.217,2.8L595,509.688L595,509.688z"/>
   </g>
 
   <!-- ==================== SHIPPING & AIR TRANSIT ROUTES ==================== -->
@@ -294,9 +289,9 @@
     
     <!-- Text Badge -->
     <g transform="translate(-115, -45)">
-      <rect x="0" y="0" width="115" height="34" rx="4" fill="rgba(6, 18, 36, 0.92)" stroke="rgba(166, 144, 116, 0.45)" stroke-width="0.8"/>
-      <text x="8" y="14" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF">USA &amp; Canada</text>
-      <text x="8" y="27" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="500" fill="#DFC4A3">Major Retail Brands</text>
+      <rect x="0" y="0" width="112" height="34" rx="4" fill="rgba(6, 18, 36, 0.9)" stroke="rgba(166, 144, 116, 0.45)" stroke-width="0.8"/>
+      <text x="8" y="14" font-family="'Inter', -apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF">USA &amp; Canada</text>
+      <text x="8" y="27" font-family="'Inter', -apple-system, sans-serif" font-size="8.5" font-weight="500" fill="#DFC4A3">Major Retail Brands</text>
     </g>
   </g>
 
@@ -308,9 +303,9 @@
 
     <!-- Text Badge -->
     <g transform="translate(-40, -48)">
-      <rect x="0" y="0" width="134" height="34" rx="4" fill="rgba(6, 18, 36, 0.92)" stroke="rgba(166, 144, 116, 0.45)" stroke-width="0.8"/>
-      <text x="8" y="14" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF">UK &amp; European Union</text>
-      <text x="8" y="27" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="500" fill="#DFC4A3">OEKO-TEX Compliant</text>
+      <rect x="0" y="0" width="128" height="34" rx="4" fill="rgba(6, 18, 36, 0.9)" stroke="rgba(166, 144, 116, 0.45)" stroke-width="0.8"/>
+      <text x="8" y="14" font-family="'Inter', -apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF">UK &amp; European Union</text>
+      <text x="8" y="27" font-family="'Inter', -apple-system, sans-serif" font-size="8.5" font-weight="500" fill="#DFC4A3">OEKO-TEX Compliant</text>
     </g>
   </g>
 
@@ -322,9 +317,9 @@
 
     <!-- Text Badge -->
     <g transform="translate(-95, -40)">
-      <rect x="0" y="0" width="90" height="32" rx="4" fill="rgba(6, 18, 36, 0.92)" stroke="rgba(166, 144, 116, 0.45)" stroke-width="0.8"/>
-      <text x="8" y="13" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">UAE &amp; Gulf</text>
-      <text x="8" y="25" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="500" fill="#DFC4A3">4-6 Days Ocean</text>
+      <rect x="0" y="0" width="90" height="32" rx="4" fill="rgba(6, 18, 36, 0.9)" stroke="rgba(166, 144, 116, 0.45)" stroke-width="0.8"/>
+      <text x="8" y="13" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">UAE &amp; Gulf</text>
+      <text x="8" y="25" font-family="'Inter', -apple-system, sans-serif" font-size="8" font-weight="500" fill="#DFC4A3">4-6 Days Ocean</text>
     </g>
   </g>
 
@@ -336,9 +331,9 @@
 
     <!-- Text Badge -->
     <g transform="translate(14, -18)">
-      <rect x="0" y="0" width="120" height="34" rx="4" fill="rgba(6, 18, 36, 0.92)" stroke="rgba(166, 144, 116, 0.45)" stroke-width="0.8"/>
-      <text x="8" y="14" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">Japan &amp; East Asia</text>
-      <text x="8" y="27" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="500" fill="#DFC4A3">High-Precision Wovens</text>
+      <rect x="0" y="0" width="115" height="34" rx="4" fill="rgba(6, 18, 36, 0.9)" stroke="rgba(166, 144, 116, 0.45)" stroke-width="0.8"/>
+      <text x="8" y="14" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">Japan &amp; East Asia</text>
+      <text x="8" y="27" font-family="'Inter', -apple-system, sans-serif" font-size="8" font-weight="500" fill="#DFC4A3">High-Precision Wovens</text>
     </g>
   </g>
 
@@ -350,9 +345,9 @@
 
     <!-- Text Badge -->
     <g transform="translate(14, -18)">
-      <rect x="0" y="0" width="118" height="34" rx="4" fill="rgba(6, 18, 36, 0.92)" stroke="rgba(166, 144, 116, 0.45)" stroke-width="0.8"/>
-      <text x="8" y="14" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">Australia &amp; NZ</text>
-      <text x="8" y="27" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="500" fill="#DFC4A3">Active &amp; Resort Wear</text>
+      <rect x="0" y="0" width="112" height="34" rx="4" fill="rgba(6, 18, 36, 0.9)" stroke="rgba(166, 144, 116, 0.45)" stroke-width="0.8"/>
+      <text x="8" y="14" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">Australia &amp; NZ</text>
+      <text x="8" y="27" font-family="'Inter', -apple-system, sans-serif" font-size="8" font-weight="500" fill="#DFC4A3">Active &amp; Resort Wear</text>
     </g>
   </g>
 
@@ -362,25 +357,21 @@
     <!-- Expanding Radar Rings -->
     <circle cx="0" cy="0" r="22" fill="none" stroke="#A69074" stroke-width="0.8" opacity="0.25"/>
     <circle cx="0" cy="0" r="14" fill="none" stroke="#A69074" stroke-width="1" opacity="0.5"/>
-    <circle cx="0" cy="0" r="7" fill="rgba(166, 144, 116, 0.4)" stroke="#EADBC8" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="7" fill="rgba(166, 144, 116, 0.35)" stroke="#DFC4A3" stroke-width="1.5"/>
     <circle cx="0" cy="0" r="3.5" fill="#FFFFFF" filter="url(#softGlow)"/>
 
-    <!-- Pin Line straight down into top center of Hub Card -->
-    <line x1="0" y1="7" x2="0" y2="42" stroke="#DFC4A3" stroke-width="1.2" stroke-dasharray="2,2"/>
+    <!-- Connecting Pin Line -->
+    <line x1="0" y1="7" x2="0" y2="35" stroke="#A69074" stroke-width="1.2" stroke-dasharray="2,2"/>
   </g>
 
-  <!-- Hub Information Card (Centered directly under Mumbai beacon at X=573) -->
-  <g transform="translate(463, 515)">
-    <!-- Card Frame (width 220, perfectly accommodates 170px text with 25px+ padding on each side) -->
-    <rect x="0" y="0" width="220" height="54" rx="6" fill="#07172E" stroke="#A69074" stroke-width="1.3" filter="url(#softGlow)"/>
-    <rect x="0" y="0" width="220" height="54" rx="6" fill="rgba(166, 144, 116, 0.1)"/>
+  <!-- Hub Information Card -->
+  <g transform="translate(485, 510)">
+    <rect x="0" y="0" width="180" height="52" rx="6" fill="#07172E" stroke="#A69074" stroke-width="1.2" filter="url(#softGlow)"/>
+    <rect x="0" y="0" width="180" height="52" rx="6" fill="rgba(166, 144, 116, 0.08)"/>
     
-    <!-- Title: Elegant Serif with generous margin -->
-    <text x="14" y="18" font-family="'Playfair Display', Georgia, serif" font-size="11" font-weight="700" fill="#DFC4A3" letter-spacing="0.4">BIHARILAL FASHIONS HUB</text>
-    <!-- Subtitle 1 -->
-    <text x="14" y="33" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.8" font-weight="500" fill="#E2E8F0">Bhiwandi Plant • Mumbai HQ</text>
-    <!-- Subtitle 2 -->
-    <text x="14" y="45" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.2" font-weight="500" fill="#94A3B8">JNPT Port &amp; BOM Cargo Connected</text>
+    <text x="12" y="17" font-family="'Playfair Display', Georgia, serif" font-size="11.5" font-weight="700" fill="#DFC4A3" letter-spacing="0.5">BIHARILAL FASHIONS HUB</text>
+    <text x="12" y="32" font-family="'Inter', -apple-system, sans-serif" font-size="8.8" font-weight="500" fill="#E2E8F0">Bhiwandi Plant • Mumbai HQ</text>
+    <text x="12" y="44" font-family="'Inter', -apple-system, sans-serif" font-size="8.2" font-weight="500" fill="#94A3B8">JNPT Port &amp; BOM Cargo Connected</text>
   </g>
 
   <!-- ==================== EXPORT CAPABILITIES SUMMARY BAR ==================== -->
