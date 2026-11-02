@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         allLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
+                if (window.innerWidth <= 1024) {
                     closeMobileMenu();
                 }
             });
