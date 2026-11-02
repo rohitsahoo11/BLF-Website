@@ -5,35 +5,81 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // Navbar Scroll Effect
+    // Navbar & Header Scroll Effect
     const navbar = document.getElementById('navbar');
+    const siteHeader = document.getElementById('siteHeader');
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
+        if (window.scrollY > 40) {
+            if (navbar) navbar.classList.add('scrolled');
+            if (siteHeader) siteHeader.classList.add('scrolled');
         } else {
-            navbar.classList.remove('scrolled');
+            if (navbar && !navbar.hasAttribute('data-permanent-scrolled')) {
+                navbar.classList.remove('scrolled');
+            }
+            if (siteHeader && !siteHeader.hasAttribute('data-permanent-scrolled')) {
+                siteHeader.classList.remove('scrolled');
+            }
         }
     });
 
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle & Accessibility
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navLinksContainer = document.querySelector('.nav-links');
-    const allLinks = document.querySelectorAll('.nav-link, .dropdown-item');
+    const allLinks = document.querySelectorAll('.nav-link, .dropdown-item, .mobile-drawer-cta .btn');
+    const toggleIcon = mobileToggle ? mobileToggle.querySelector('i') : null;
 
-    /* Mobile menu implementation via CSS classes */
-    mobileToggle.addEventListener('click', () => {
-        navLinksContainer.classList.toggle('nav-active');
-    });
+    if (mobileToggle && navLinksContainer) {
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.setAttribute('aria-label', 'Toggle navigation menu');
 
-    // Close mobile menu when clicking a link
-    allLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                navLinksContainer.classList.remove('nav-active');
+        const closeMobileMenu = () => {
+            navLinksContainer.classList.remove('nav-active');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            if (toggleIcon) {
+                toggleIcon.classList.remove('fa-times');
+                toggleIcon.classList.add('fa-bars');
+            }
+        };
+
+        const openMobileMenu = () => {
+            navLinksContainer.classList.add('nav-active');
+            mobileToggle.setAttribute('aria-expanded', 'true');
+            if (toggleIcon) {
+                toggleIcon.classList.remove('fa-bars');
+                toggleIcon.classList.add('fa-times');
+            }
+        };
+
+        mobileToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (navLinksContainer.classList.contains('nav-active')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
             }
         });
-    });
+
+        allLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    closeMobileMenu();
+                }
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinksContainer.classList.contains('nav-active')) {
+                closeMobileMenu();
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (navLinksContainer.classList.contains('nav-active') && navbar && !navbar.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
+    }
 
     // Smooth Scroll for Anchor Links (if CSS smooth scroll is not enough)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

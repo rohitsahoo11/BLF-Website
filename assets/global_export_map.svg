@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="100%" height="auto">
+  <defs>
+    <linearGradient id="mapBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071326"/>
+      <stop offset="100%" stop-color="#0B1D3A"/>
+    </linearGradient>
+    <linearGradient id="routeLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A69074" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#E2D4C0" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#A69074" stop-opacity="0.3"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1000" height="480" rx="12" fill="url(#mapBg)"/>
+  
+  <!-- Subtle Latitude / Longitude Grid -->
+  <g stroke="rgba(255,255,255,0.04)" stroke-width="1">
+    <line x1="50" y1="120" x2="950" y2="120"/>
+    <line x1="50" y1="240" x2="950" y2="240"/>
+    <line x1="50" y1="360" x2="950" y2="360"/>
+    <line x1="200" y1="40" x2="200" y2="440"/>
+    <line x1="400" y1="40" x2="400" y2="440"/>
+    <line x1="600" y1="40" x2="600" y2="440"/>
+    <line x1="800" y1="40" x2="800" y2="440"/>
+  </g>
+
+  <!-- Continents simplified silhouette dots/paths -->
+  <g fill="rgba(255,255,255,0.08)">
+    <!-- North America -->
+    <path d="M 120,100 Q 180,90 230,120 Q 250,170 210,230 Q 160,260 130,220 Q 90,160 120,100 Z"/>
+    <!-- South America -->
+    <path d="M 230,260 Q 280,290 270,360 Q 240,420 220,380 Q 200,320 230,260 Z"/>
+    <!-- Europe -->
+    <path d="M 460,110 Q 530,100 550,150 Q 520,180 470,170 Q 440,140 460,110 Z"/>
+    <!-- Africa -->
+    <path d="M 460,200 Q 540,210 550,280 Q 520,370 480,350 Q 440,270 460,200 Z"/>
+    <!-- Asia -->
+    <path d="M 570,100 Q 750,80 820,150 Q 800,240 700,230 Q 640,190 570,180 Z"/>
+    <!-- India Subcontinent Highlight -->
+    <path d="M 640,220 Q 670,225 680,250 Q 660,290 645,260 Z" fill="rgba(166,144,116,0.2)"/>
+    <!-- Australia -->
+    <path d="M 780,310 Q 860,300 870,360 Q 820,400 770,370 Q 760,330 780,310 Z"/>
+  </g>
+
+  <!-- Connection Routes from Mumbai Hub (X: 650, Y: 245) -->
+  <!-- 1. Route to UK/Europe (X: 490, Y: 135) -->
+  <path d="M 650,245 Q 560,160 490,135" fill="none" stroke="url(#routeLine)" stroke-width="2" stroke-dasharray="6,4"/>
+  
+  <!-- 2. Route to US East Coast (X: 230, Y: 160) -->
+  <path d="M 650,245 Q 430,90 230,160" fill="none" stroke="url(#routeLine)" stroke-width="2" stroke-dasharray="6,4"/>
+
+  <!-- 3. Route to US West Coast (via Pacific or Atlantic) (X: 140, Y: 170) -->
+  <path d="M 650,245 Q 380,80 140,170" fill="none" stroke="url(#routeLine)" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.7"/>
+
+  <!-- 4. Route to Middle East / UAE (X: 580, Y: 215) -->
+  <path d="M 650,245 Q 610,225 580,215" fill="none" stroke="url(#routeLine)" stroke-width="2.5" stroke-dasharray="5,3"/>
+
+  <!-- 5. Route to Australia (X: 820, Y: 350) -->
+  <path d="M 650,245 Q 750,300 820,350" fill="none" stroke="url(#routeLine)" stroke-width="2" stroke-dasharray="6,4"/>
+
+  <!-- 6. Route to East Asia / Japan (X: 810, Y: 170) -->
+  <path d="M 650,245 Q 730,190 810,170" fill="none" stroke="url(#routeLine)" stroke-width="2" stroke-dasharray="6,4"/>
+
+  <!-- Destination Destination Nodes -->
+  <!-- USA -->
+  <g transform="translate(230, 160)">
+    <circle cx="0" cy="0" r="5" fill="#A69074"/>
+    <circle cx="0" cy="0" r="10" fill="none" stroke="#A69074" stroke-width="1" opacity="0.6"/>
+    <text x="-12" y="-12" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">USA &amp; Canada</text>
+    <text x="-12" y="24" font-family="'Inter', sans-serif" font-size="9" fill="#A69074">Major Retail Brands</text>
+  </g>
+
+  <!-- UK & EU -->
+  <g transform="translate(490, 135)">
+    <circle cx="0" cy="0" r="5" fill="#A69074"/>
+    <circle cx="0" cy="0" r="10" fill="none" stroke="#A69074" stroke-width="1" opacity="0.6"/>
+    <text x="12" y="-5" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">UK &amp; European Union</text>
+    <text x="12" y="10" font-family="'Inter', sans-serif" font-size="9" fill="#A69074">OEKO-TEX Compliant</text>
+  </g>
+
+  <!-- UAE & Middle East -->
+  <g transform="translate(580, 215)">
+    <circle cx="0" cy="0" r="5" fill="#A69074"/>
+    <circle cx="0" cy="0" r="9" fill="none" stroke="#A69074" stroke-width="1" opacity="0.6"/>
+    <text x="-95" y="18" font-family="'Inter', sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF">UAE &amp; Gulf</text>
+    <text x="-95" y="31" font-family="'Inter', sans-serif" font-size="9" fill="#A69074">4-6 Days Ocean</text>
+  </g>
+
+  <!-- Japan / East Asia -->
+  <g transform="translate(810, 170)">
+    <circle cx="0" cy="0" r="5" fill="#A69074"/>
+    <circle cx="0" cy="0" r="9" fill="none" stroke="#A69074" stroke-width="1" opacity="0.6"/>
+    <text x="12" y="0" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Japan &amp; East Asia</text>
+    <text x="12" y="14" font-family="'Inter', sans-serif" font-size="9" fill="#A69074">High-Precision Wovens</text>
+  </g>
+
+  <!-- Australia -->
+  <g transform="translate(820, 350)">
+    <circle cx="0" cy="0" r="5" fill="#A69074"/>
+    <circle cx="0" cy="0" r="9" fill="none" stroke="#A69074" stroke-width="1" opacity="0.6"/>
+    <text x="12" y="0" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Australia &amp; NZ</text>
+    <text x="12" y="14" font-family="'Inter', sans-serif" font-size="9" fill="#A69074">Active &amp; Resort Wear</text>
+  </g>
+
+  <!-- CENTRAL HUB: MUMBAI & BHIWANDI -->
+  <g transform="translate(650, 245)" filter="url(#glow)">
+    <circle cx="0" cy="0" r="16" fill="rgba(166, 144, 116, 0.25)"/>
+    <circle cx="0" cy="0" r="8" fill="#A69074"/>
+    <circle cx="0" cy="0" r="3" fill="#FFFFFF"/>
+    
+    <!-- Hub Pin Card -->
+    <rect x="-110" y="22" width="220" height="52" rx="6" fill="#0B1D3A" stroke="#A69074" stroke-width="1.5"/>
+    <text x="0" y="40" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">BIHARILAL FASHIONS HUB</text>
+    <text x="0" y="54" font-family="'Inter', sans-serif" font-size="9" fill="#A69074" text-anchor="middle">Bhiwandi Plant • Mumbai HQ</text>
+    <text x="0" y="66" font-family="'Inter', sans-serif" font-size="8" fill="#94A3B8" text-anchor="middle">JNPT Port &amp; BOM Cargo Connected</text>
+  </g>
+
+  <!-- Map Legend / Stats Bar -->
+  <g transform="translate(50, 420)">
+    <rect width="900" height="42" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="30" y="26" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#A69074">EXPORT CAPABILITIES:</text>
+    <text x="190" y="26" font-family="'Inter', sans-serif" font-size="10.5" fill="#E2E8F0">🚢 Ocean Transit: 18–22 Days (EU/UK) • 20–25 Days (US East/West Coast)</text>
+    <text x="690" y="26" font-family="'Inter', sans-serif" font-size="10.5" fill="#E2E8F0">✈️ Air Express: 3–5 Days Worldwide</text>
+  </g>
+</svg>

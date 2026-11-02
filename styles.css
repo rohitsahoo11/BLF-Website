@@ -1,3 +1,28 @@
+/* ==========================================================================
+   BIHARILAL FASHIONS (BLF) — STYLESHEET
+   Global Garment Manufacturing & Exporting
+
+   TABLE OF CONTENTS:
+   01. Reset & Root Variables
+   02. Typography & Base Elements
+   03. Buttons & Component Utilities
+   04. Site Header & Quick-Contact Top Bar
+   05. Navigation & Dropdowns
+   06. Hero Section & Background Overlays
+   07. Trust Signals & Accreditation Badges
+   08. Split Feature Sections (About & Infrastructure)
+   09. Global Export Markets & Shipping Map
+   10. Fabric Library & Garment Products Preview
+   11. Sustainability Grid & Eco Highlights
+   12. Testimonials & Social Proof
+   13. Contact Wrapper & B2B Buyer Assurance
+   14. Global 4-Column Footer & Facilities
+   15. Animations & Keyframes
+   16. Notification Popup
+   17. Floating WhatsApp Action Widget
+   18. Responsive Breakpoints (1024px, 768px, 480px)
+   ========================================================================== */
+
 :root {
     /* Color Palette */
     --primary-dark: #0B1D3A; /* Deep Navy */
@@ -5,7 +30,7 @@
     --accent-earth: #A69074; /* Muted Earth Tone */
     --accent-hover: #8e785d;
     --text-main: #2C3E50;
-    --text-light: #7A8B99;
+    --text-light: #54667A;
     --text-white: #FFFFFF;
     
     /* Typography */
@@ -16,7 +41,8 @@
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     --border-radius: 8px;
     --max-width: 1200px;
-    --nav-height: 80px;
+    --nav-height: 74px;
+    --top-bar-height: 38px;
 }
 
 * {
@@ -128,11 +154,11 @@ ul {
 .section-subtitle {
     display: block;
     font-family: var(--font-body);
-    color: var(--accent-earth);
+    color: #D4C3AC;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
@@ -154,11 +180,86 @@ ul {
 .divider-light { background-color: rgba(255,255,255,0.2); }
 .center-divider { margin: 1.5rem auto 2rem; }
 
-/* Navigation */
-.navbar {
+/* Site Header & Top Contact Bar */
+.site-header {
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.top-bar {
+    background-color: #061122;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.82rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    max-height: 45px;
+    opacity: 1;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.35s ease;
+}
+
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.top-bar-left, .top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.top-bar-item {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.82rem;
+    transition: var(--transition);
+}
+
+.top-bar-item i {
+    color: var(--accent-earth);
+    font-size: 0.85rem;
+}
+
+.top-bar-item:hover {
+    color: var(--text-white);
+}
+
+.top-bar-item.whatsapp-top {
+    color: #25D366;
+    font-weight: 500;
+}
+
+.top-bar-item.whatsapp-top i {
+    color: #25D366;
+}
+
+.top-bar-item.whatsapp-top:hover {
+    color: #34e77a;
+}
+
+.site-header.scrolled .top-bar {
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+    border-bottom: none;
+}
+
+.mobile-drawer-cta { display: block;
+         display: none; }
+
+/* Navigation */
+.navbar {
+    position: relative;
     width: 100%;
     height: var(--nav-height);
     background-color: rgba(11, 29, 58, 0.95);
@@ -302,7 +403,7 @@ ul {
     position: relative;
     display: flex;
     align-items: center;
-    padding-top: var(--nav-height);
+    padding-top: calc(var(--nav-height) + var(--top-bar-height));
 }
 
 .hero-bg {
@@ -322,7 +423,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(11,29,58,0.9) 0%, rgba(11,29,58,0.5) 100%);
+    background: linear-gradient(to right, rgba(11,29,58,0.94) 0%, rgba(11,29,58,0.82) 55%, rgba(11,29,58,0.65) 100%);
     z-index: 2;
 }
 
@@ -582,7 +683,7 @@ ul {
     flex-shrink: 0;
 }
 
-.detail-item h4 {
+.detail-item h4, .detail-item h3 {
     color: var(--text-white);
     margin-bottom: 0.25rem;
     font-family: var(--font-body);
@@ -751,7 +852,7 @@ ul {
     border: 2px solid var(--accent-earth);
 }
 
-.author-info h4 {
+.author-info h4, .author-info h3 {
     margin-bottom: 0.2rem;
     font-size: 1rem;
 }
@@ -771,9 +872,77 @@ ul {
 
 .footer-container {
     display: grid;
-    grid-template-columns: 2fr 1fr 1.5fr;
-    gap: 4rem;
-    margin-bottom: 3rem;
+    grid-template-columns: 1.4fr 1fr 1.6fr 1.1fr;
+    gap: 2.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.footer-contact h4 {
+    color: var(--text-white);
+    font-family: var(--font-body);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.875rem;
+}
+
+.footer-contact-item {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.footer-contact-item i {
+    color: var(--accent-earth);
+    margin-top: 0.25rem;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.footer-contact-item a {
+    color: rgba(255,255,255,0.78);
+    transition: var(--transition);
+}
+
+.footer-contact-item a:hover {
+    color: var(--accent-earth);
+}
+
+.footer-contact-item.wa a {
+    color: #25D366;
+    font-weight: 500;
+}
+
+.footer-contact-item.wa a:hover {
+    color: #34e77a;
+}
+
+.social-links {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    transition: var(--transition);
+    margin-left: 0;
+}
+
+.social-links a:hover {
+    background: var(--accent-earth);
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
 .footer-desc {
@@ -875,6 +1044,10 @@ ul {
     .sustainability-grid {
         grid-template-columns: 1fr;
     }
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
     .fabric-preview-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -889,10 +1062,13 @@ ul {
         position: absolute;
         top: 100%;
         left: 0;
-        background-color: var(--text-white);
+        background-color: #ffffff;
         flex-direction: column;
-        padding: 1rem 0;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        padding: 0.5rem 0 1.5rem;
+        box-shadow: 0 15px 30px rgba(11,29,58,0.15);
+        border-bottom: 2px solid var(--accent-earth);
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
         gap: 0;
     }
     .nav-links.nav-active {
@@ -914,7 +1090,15 @@ ul {
         align-items: flex-start;
     }
     .dropdown > .nav-link {
-        display: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(244, 246, 249, 0.7);
+        font-weight: 600;
+        color: var(--primary-dark) !important;
+        padding: 0.85rem 1.75rem;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+        width: 100%;
     }
     .dropdown-menu {
         position: static;
@@ -926,16 +1110,39 @@ ul {
         padding: 0;
         margin: 0;
         width: 100%;
-        background-color: transparent;
+        background-color: #ffffff;
         display: flex;
         flex-direction: column;
     }
+    .dropdown-item {
+        padding: 0.75rem 2.5rem;
+        font-size: 0.92rem;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid rgba(0,0,0,0.04);
+        width: 100%;
+        text-align: left;
+    }
     .dropdown-item:hover {
-        padding-left: 2rem;
-        background-color: transparent;
+        padding-left: 2.75rem;
+        background-color: var(--primary-light);
         color: var(--accent-earth) !important;
     }
+    .mobile-drawer-cta { display: block;
+        
+        padding: 1.25rem 1.75rem 0.5rem;
+        width: 100%;
+    }
+    .mobile-drawer-cta .btn {
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
 
+    .top-bar-left { display: none; }
+    .top-bar-right { width: 100%; justify-content: space-between; }
+    .top-bar { font-size: 0.75rem; }
     .nav-btn { display: none; }
     .mobile-toggle { display: block; }
     .hero-title { font-size: 2.5rem; }
@@ -1013,5 +1220,277 @@ ul {
         right: 15px;
         left: 15px;
         max-width: calc(100% - 30px);
+    }
+}
+
+/* Floating WhatsApp Quick-Contact */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: #ffffff;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+    color: #ffffff;
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    right: 68px;
+    background-color: var(--primary-dark);
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(10px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Certification Cards */
+.cert-card {
+    background: var(--text-white);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: center;
+    border-top: 4px solid var(--accent-earth);
+    transition: var(--transition);
+}
+
+.cert-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.cert-logo {
+    width: 80px;
+    height: 80px;
+    background: rgba(166, 144, 116, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--accent-earth);
+    font-size: 2.5rem;
+}
+
+.cert-title {
+    font-family: var(--font-heading);
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.cert-desc {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* --- Fix 4: Trust Signals, Accreditations & Export Showcase --- */
+.trust-cert-strip {
+    background-color: var(--primary-light);
+    border-top: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding: 2.5rem 0;
+}
+
+.trust-cert-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.trust-cert-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-earth);
+    text-align: center;
+}
+
+.trust-cert-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.trust-badge-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.trust-badge-img {
+    width: 82px;
+    height: 82px;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.06));
+    transition: var(--transition);
+}
+
+.trust-badge-link:hover .trust-badge-img {
+    transform: translateY(-5px) scale(1.06);
+    filter: drop-shadow(0 8px 18px rgba(11, 29, 58, 0.15));
+}
+
+.trust-badge-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    letter-spacing: 0.5px;
+}
+
+/* Global Export Markets Showcase */
+.export-markets-section {
+    background-color: #071326;
+    color: var(--text-white);
+    padding: 5rem 0;
+}
+
+.export-destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1.25rem;
+    margin: 2.5rem 0;
+}
+
+.export-destination-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--border-radius);
+    padding: 1.25rem 1rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.export-destination-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-earth);
+    transform: translateY(-4px);
+}
+
+.destination-flag {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.destination-country {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 0.25rem;
+}
+
+.destination-specialty {
+    font-size: 0.78rem;
+    color: var(--accent-earth);
+    line-height: 1.3;
+}
+
+.export-map-wrapper {
+    margin-top: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* B2B Buyer Assurance & MOQ Grid */
+.b2b-guarantee-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.b2b-guarantee-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--primary-light);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: var(--border-radius);
+    padding: 1.2rem;
+}
+
+.b2b-guarantee-item i {
+    font-size: 1.6rem;
+    color: var(--accent-earth);
+    flex-shrink: 0;
+}
+
+.b2b-guarantee-item strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--primary-dark);
+    margin-bottom: 0.2rem;
+}
+
+.b2b-guarantee-item span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    line-height: 1.3;
+}
+
+.cert-card .cert-badge-icon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 1.5rem;
+    display: block;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.08));
+    transition: var(--transition);
+}
+
+.cert-card:hover .cert-badge-icon {
+    transform: scale(1.08);
+}
+
+@media (max-width: 768px) {
+    .b2b-guarantee-grid {
+        grid-template-columns: 1fr;
+    }
+    .trust-cert-grid {
+        gap: 1.5rem;
+    }
+    .trust-badge-img {
+        width: 68px;
+        height: 68px;
+    }
+    .export-destinations-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

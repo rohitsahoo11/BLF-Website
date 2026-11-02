@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rohitsahoo11.github.io/BLF-Website/sitemap.xml

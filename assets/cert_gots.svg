@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <linearGradient id="gotsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1D3A"/>
+      <stop offset="100%" stop-color="#143D30"/>
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="76" fill="url(#gotsGrad)" stroke="#2ECC71" stroke-width="2.5"/>
+  <circle cx="80" cy="80" r="69" fill="none" stroke="#2ECC71" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+
+  <!-- Organic Shirt/Plant graphic -->
+  <circle cx="80" cy="58" r="16" fill="#2ECC71" fill-opacity="0.2" stroke="#2ECC71" stroke-width="1.5"/>
+  <path d="M 80 48 C 84 54 85 62 80 66 C 75 62 76 54 80 48 Z" fill="#2ECC71"/>
+  
+  <text x="80" y="92" font-family="'Inter', sans-serif" font-size="22" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">GOTS</text>
+  <text x="80" y="108" font-family="'Inter', sans-serif" font-size="8" font-weight="700" fill="#2ECC71" text-anchor="middle" letter-spacing="1.2">ORGANIC TEXTILE</text>
+  <text x="80" y="122" font-family="'Inter', sans-serif" font-size="7.5" font-weight="500" fill="#CBD5E1" text-anchor="middle" letter-spacing="1">ECOLOGICAL &amp; SOCIAL CRITERIA</text>
+</svg>

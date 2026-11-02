@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <linearGradient id="bciGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1D3A"/>
+      <stop offset="100%" stop-color="#1A3B5C"/>
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="76" fill="url(#bciGrad)" stroke="#A69074" stroke-width="2.5"/>
+  <circle cx="80" cy="80" r="69" fill="none" stroke="#A69074" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+
+  <path id="bciArcTop" d="M 22 80 A 58 58 0 0 1 138 80" fill="none"/>
+  <text font-family="'Inter', sans-serif" font-size="8" font-weight="700" fill="#A69074" letter-spacing="1.5">
+    <textPath href="#bciArcTop" startOffset="50%" text-anchor="middle">SUSTAINABLE SOURCING</textPath>
+  </text>
+  
+  <text x="80" y="68" font-family="'Inter', sans-serif" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">BETTER</text>
+  <text x="80" y="86" font-family="'Inter', sans-serif" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">COTTON</text>
+  <rect x="42" y="93" width="76" height="16" rx="3" fill="#A69074"/>
+  <text x="80" y="105" font-family="'Inter', sans-serif" font-size="9" font-weight="800" fill="#0B1D3A" text-anchor="middle" letter-spacing="1.5">INITIATIVE</text>
+  <text x="80" y="123" font-family="'Inter', sans-serif" font-size="7.5" font-weight="500" fill="#E2E8F0" text-anchor="middle" letter-spacing="1">FARMING PRACTICES</text>
+</svg>

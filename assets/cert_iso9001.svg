@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <linearGradient id="isoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1D3A"/>
+      <stop offset="100%" stop-color="#1B3B6F"/>
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="76" fill="url(#isoGrad)" stroke="#A69074" stroke-width="2.5"/>
+  <circle cx="80" cy="80" r="68" fill="none" stroke="#A69074" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+  
+  <!-- Outer Ring Text (simplified visually) -->
+  <path id="isoArcTop" d="M 25 80 A 55 55 0 0 1 135 80" fill="none"/>
+  <text font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#A69074" letter-spacing="2">
+    <textPath href="#isoArcTop" startOffset="50%" text-anchor="middle">QUALITY MANAGEMENT</textPath>
+  </text>
+  
+  <!-- Center Text -->
+  <text x="80" y="68" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">ISO</text>
+  <rect x="36" y="76" width="88" height="2" fill="#A69074"/>
+  <text x="80" y="96" font-family="'Inter', sans-serif" font-size="16" font-weight="700" fill="#A69074" text-anchor="middle" letter-spacing="1">9001:2015</text>
+  <text x="80" y="114" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" fill="#E2E8F0" text-anchor="middle" letter-spacing="1.5">CERTIFIED FACILITY</text>
+  
+  <!-- Rating Stars -->
+  <g fill="#A69074" transform="translate(56, 122) scale(0.7)">
+    <polygon points="10,1 4,19 19,7 1,7 16,19"/>
+    <polygon points="34,1 28,19 43,7 25,7 40,19"/>
+    <polygon points="58,1 52,19 67,7 49,7 64,19"/>
+  </g>
+</svg>
