@@ -1476,9 +1476,26 @@ ul {
 }
 
 .destination-flag {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.destination-flag-img {
+    width: 36px;
+    height: 24px;
+    object-fit: cover;
+    border-radius: 3px;
     display: block;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: var(--transition);
+}
+
+.export-destination-card:hover .destination-flag-img {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
 }
 
 .destination-country {
